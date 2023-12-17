@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  color: #850335;
 }
 
 .App-logo {
@@ -14,7 +15,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #ff80ff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +36,53 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+ul {
+  list-style-type: none;
+  padding: 0; 
+  margin: 10px; 
+}
+
+li {
+  margin-bottom: 40px; 
+}
+
+img {
+  float: left; 
+  margin-right: 20px;
+  border: 2px solid #ff80ff; 
+  border-radius: 4px;
+}
+
+.BooksRosaHeading {
+  color: #ff80ff; 
+  /* font-size: 16px; */
+}
+
+.SearchForISBN_Div {
+  padding: 20px; 
+}
+
+.ListHeading{
+  margin: 10%;
+}
+
+button {
+  display: inline-block;
+  padding: 2px 10px;
+  font-size: 13px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid #333;
+  border-radius: 3px;
+  background-color: #f3dbec;
+  color: #333;
+  margin-left: 10px;
+}
+
+button:hover {
+  background-color: #ddd;
 }
