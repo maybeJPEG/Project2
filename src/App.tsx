@@ -6,6 +6,7 @@ import { getByIsbn } from './domain/API.js';
 import React, { useEffect , useState} from 'react';
 import { Book } from './domain/BookInterface';
 import {useBooks} from './domain/hooks';
+import { Outlet } from "react-router-dom";
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       <header className="App-header">
       <div>
        <AppHeader />
+       <Outlet />
        </div>
 
       </header>

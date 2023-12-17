@@ -45,6 +45,13 @@ const useBooks = (): UseBooksResult => {
     return () => clearInterval(intervalId);
   }, []);
 
+  useEffect(() => {
+    // Additional cleanup logic 
+    return () => {
+      // This cleanup function will run when the component is unmounted
+    };
+  }, []);
+
   return { items, state, error, refresh };
 };
 
