@@ -6,6 +6,11 @@ import { Link } from 'react-router-dom';
   const BookList = () => {
     const { items, state, error, refresh } = useBooks();
   
+    const handleClick = () => {
+      // Scroll to the top of the page
+      window.scrollTo(0, 0);
+    };
+
     return (
       <div>
         {state === 'loading' && <p>Loading items...</p>}
@@ -23,13 +28,11 @@ import { Link } from 'react-router-dom';
                         )}
                 <h2>{book.title}</h2>
               {book.subtitle && <h3>{book.subtitle}</h3>}
-              <p>{book.abstract}</p>
               <p>Author: {book.author}</p>
-              <p>Publisher: {book.publisher}</p>
               <p>Price: ${book.price}</p>
               <p>Number of Pages: {book.numPages}</p>
               <p>ISBN: {book.isbn}</p>
-              <Link to={`/books/${book.isbn}`}>View Details</Link>
+              <Link to={`/books/${book.isbn}`} onClick={handleClick} > View Details </Link>
               <LikeButton isbn={book.isbn} initialLikes={0} />
                 </li>
               ))}

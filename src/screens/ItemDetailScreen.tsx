@@ -1,27 +1,26 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useParams } from 'react-router-dom';
-import { getByIsbn } from '../domain/API'; // Import your getByIsbn function
-import { Book } from '../domain/BookInterface'; // Import your Book interface
+import { getByIsbn } from '../domain/API'; 
+import { Book } from '../domain/BookInterface'; 
 import { LikeButton } from '../components/LikeButton';
 
-interface ItemDetailScreenProps {}
+interface ItemDetailScreenProps { }
 
 export const ItemDetailScreen: React.FC<ItemDetailScreenProps> = () => {
   const { isbn } = useParams<{ isbn: string | undefined }>();
   const [book, setBook] = useState<Book | undefined>(undefined);
 
-  // Fetch your book details in useEffect
+
   useEffect(() => {
     const fetchBook = async () => {
-        try {
-            // Ensure that isbn is defined before making the API call
-            if (isbn) {
-              const bookDetails = await getByIsbn(isbn);
-              setBook(bookDetails);
-            }
-          } catch (error: any) {
-            console.error('Error fetching book details:', error.message);
-          }
+      try {
+        if (isbn) {
+          const bookDetails = await getByIsbn(isbn);
+          setBook(bookDetails);
+        }
+      } catch (error: any) {
+        console.error('Error fetching book details:', error.message);
+      }
     };
 
     fetchBook();
@@ -29,16 +28,9 @@ export const ItemDetailScreen: React.FC<ItemDetailScreenProps> = () => {
 
   return (
     <div>
-      <br />
       <h2>Book Detail Screen</h2>
-
-      <Link to={'/items'}>
-        <span>⬅️ &nbsp; </span>Back to all books
-      </Link>
-      <br />
       {book ? (
         <>
-          <img src={book.cover} alt={`${book.title} Cover`} />
           <ul style={{ listStyle: 'none' }}>
             <li>Title: {book.title}</li>
             {book.subtitle && <li>Subtitle: {book.subtitle}</li>}
@@ -54,6 +46,11 @@ export const ItemDetailScreen: React.FC<ItemDetailScreenProps> = () => {
           <NavLink to={`/items/${isbn}/edit`}>
             <button>Edit</button>
           </NavLink>
+          <br /><br />
+          <NavLink to={'/'}>
+            <span>⬅️ &nbsp; </span>Back to all books
+          </NavLink>
+          <br /> <br />
         </>
       ) : (
         <p>Loading book details...</p>
