@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { getAll } from '../domain/API';
-import { Book } from '../domain/BookInterface';
 import {useBooks} from '../domain/hooks';
 import {LikeButton} from './LikeButton';
+import { Link } from 'react-router-dom';
 
 
   const BookList = () => {
@@ -31,6 +29,7 @@ import {LikeButton} from './LikeButton';
               <p>Price: ${book.price}</p>
               <p>Number of Pages: {book.numPages}</p>
               <p>ISBN: {book.isbn}</p>
+              <Link to={`/books/${book.isbn}`}>View Details</Link>
               <LikeButton isbn={book.isbn} initialLikes={0} />
                 </li>
               ))}

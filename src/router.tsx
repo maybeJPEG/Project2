@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
-import {ErrorScreen} from "./components/ErrorScreen";
-import {AboutScreen} from "./components/AboutScreen";
+import { ErrorScreen } from "./screens/ErrorScreen";
+import { AboutScreen } from "./screens/AboutScreen";
+import { ItemDetailScreen } from "./screens/ItemDetailScreen";
 
 
 export const router = createBrowserRouter([
@@ -11,9 +12,13 @@ export const router = createBrowserRouter([
         errorElement: <ErrorScreen />,
         children: [
             {
-            path: "components/AboutScreen", // matches: /about
-            element: <AboutScreen />,
+                path: "/AboutScreen", 
+                element: <AboutScreen />,
             },
-            ],
+            {
+                path: "books/:isbn",
+                element: <ItemDetailScreen />,
+              },
+        ],
     }
 ]);
