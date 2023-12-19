@@ -3,6 +3,7 @@ import App from "./App";
 import { ErrorScreen } from "./screens/ErrorScreen";
 import { AboutScreen } from "./screens/AboutScreen";
 import { ItemDetailScreen } from "./screens/ItemDetailScreen";
+import { ItemEditScreen } from "./screens/ItemEditScreen";
 
 
 export const router = createBrowserRouter([
@@ -18,6 +19,10 @@ export const router = createBrowserRouter([
             {
                 path: "books/:isbn",
                 element: <ItemDetailScreen />,
+              },
+              {
+                path: "items/:isbn/edit",
+                element: <ItemEditScreen />,
               },
         ],
     }
