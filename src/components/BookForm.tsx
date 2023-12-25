@@ -6,6 +6,8 @@ import { Book } from '../domain/BookInterface';
 interface BookFormProps {
     initialBook: Book;
     onChange: (updatedBook: Book) => void;
+    onSubmit: (book: Book) => void;
+    
 }
 
 const BookForm: React.FC<BookFormProps> = ({ initialBook, onChange }) => {

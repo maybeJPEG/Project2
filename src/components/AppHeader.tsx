@@ -9,8 +9,11 @@ const AppHeader: React.FC = () => {
       <h1>BooksBooks</h1>
       <nav>
         {location.pathname === '/' && (
-          // Render the About link only on the Home screen
-          <NavLink to="/AboutScreen">About</NavLink>
+          // Render the About and Add a Book links only on the Home screen
+          <>
+            <NavLink to="/AboutScreen">About</NavLink>
+            <NavLink to="/CreateItemScreen">Add a Book</NavLink>
+          </>
         )}
         {location.pathname === '/AboutScreen' && (
           // Render the Home link only on the About screen

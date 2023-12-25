@@ -32,7 +32,7 @@ export const ItemEditScreen: React.FC<ItemEditScreenProps> = () => {
 
     return (
         
-        <div > <h2>Edit Screen</h2>
+        <div > <h2>Edit</h2>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             {book ? (
                 <>
@@ -49,7 +49,10 @@ export const ItemEditScreen: React.FC<ItemEditScreenProps> = () => {
                         </ul>
                     </div>
                     <div style={{ flex: 1 }}>
-                        <BookForm initialBook={book} onChange={handleBookChange} />
+                        <BookForm initialBook={book} onChange={handleBookChange} onSubmit={function (book: Book): void  {
+                                throw new Error('Function not implemented.');
+                            } }  
+                            />
                     </div>
                 </>
             ) : (
