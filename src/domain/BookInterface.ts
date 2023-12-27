@@ -36,7 +36,7 @@ class Book implements BookI {
         this.cover = cover || `http://localhost:4730/covers/${isbn}.png`;
     }
 
-    toString() {
+    toString(): string {
         return JSON.stringify(this)
     }
 

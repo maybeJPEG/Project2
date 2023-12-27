@@ -86,9 +86,11 @@ async function postBook(book: Book) {
       book.isbn = generateRandomIsbn();
     }
 
+    console.log(Book)
+    
     const response = await fetch(url + "books", {
       method: 'POST',
-      body: book.toString(),
+      body: JSON.stringify(book),
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'

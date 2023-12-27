@@ -34,11 +34,16 @@ const CreateNewItemScreen: React.FC<CreateNewItemScreenProps> = () => {
     }
   };
 
+  const handleCancel = () => {
+    navigate('/'); // Adjust the route to your All-Items Screen route
+  };
+
 
   return (
     <div>
       <h2>Create New Item</h2>
       <BookForm onSubmit={handleCreate} />
+      <button onClick={handleCancel}>Cancel</button>
     </div>
   );
 };

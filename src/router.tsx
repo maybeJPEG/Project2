@@ -5,6 +5,7 @@ import { AboutScreen } from "./screens/AboutScreen";
 import { ItemDetailScreen } from "./screens/ItemDetailScreen";
 import { ItemEditScreen } from "./screens/ItemEditScreen";
 import  CreateItemScreen  from "./screens/CreateItemScreen";
+import DeleteItemScreen from "./screens/DeleteItemScreen";
 
 
 export const router = createBrowserRouter([
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
               {
                 path: "/CreateItemScreen",
                 element: <CreateItemScreen />,
+              }, 
+              {
+                path: "/DeleteItemScreen",
+                element: <DeleteItemScreen />,
               }, 
         ],
     }
