@@ -27,7 +27,7 @@ const CreateNewItemScreen: React.FC<CreateNewItemScreenProps> = () => {
       console.log('Item created successfully:', createdBook);
 
       // Redirect to the ItemDetailScreen for the newly created item
-      navigate(`/items/${createdBook.isbn}`);
+      navigate(`/books/${createdBook.isbn}`);
     } catch (error : any) {
       console.error('Error creating item:', error.message);
       // Handle error, e.g., show an error message to the user

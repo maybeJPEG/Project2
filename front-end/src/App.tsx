@@ -2,7 +2,7 @@
 import './App.css';
 import AppHeader from './components/AppHeader';
 import BookList from './components/BookList';
-import { getByIsbn } from './domain/API.js';
+import { getByIsbn } from './domain/API';
 import React, { useEffect , useState} from 'react';
 import { Book } from './domain/BookInterface';
 import {useBooks} from './domain/hooks';

@@ -1,5 +1,5 @@
-const url: string = "http://localhost:4730/";
 import { Book, BookI } from "./BookInterface";
+const url: string = "http://localhost:4730/";
 
 async function getAll(): Promise<Book[] | undefined> {
 
