@@ -15,7 +15,7 @@ async function getAll(): Promise<Book[] | undefined> {
 
     const bookList: Book[] = allBooks.map((bookData) => Book.fromObject(bookData));
 
-    return bookList;
+    return allBooks;
 
   }
 
