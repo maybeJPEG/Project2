@@ -13,11 +13,9 @@ async function getAll(): Promise<Book[] | undefined> {
 
     const allBooks: BookI[] = await response.json();
 
-    console.log(allBooks);
-
     const bookList: Book[] = allBooks.map((bookData) => Book.fromObject(bookData));
 
-    return allBooks;
+    return bookList;
 
   }
 
@@ -25,7 +23,7 @@ async function getAll(): Promise<Book[] | undefined> {
   catch (error: any) {
 
     console.error('Error:', error.message);
-    throw error;
+    throw new Error(error.message);
   }
 
 }

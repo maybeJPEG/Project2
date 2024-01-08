@@ -27,7 +27,6 @@ const useBooks = (): UseBooksResult => {
       setError(error);
       await new Promise((resolve) => setTimeout(resolve, 1000));
       setState('error');
-      throw error;
     }
   };
 
