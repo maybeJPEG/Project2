@@ -26,25 +26,26 @@ const Login: React.FC<LoginProps> = ({ onCancel }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     dispatch(loginStart());
-
+  
     try {
-      const response = await axios.post('http://localhost:4730/login', formData, {
-        headers: {
-          'Content-Type': 'application/json',
+      // Simulate a successful login without reaching the API
+      const fakeLoginResponse = {
+        status: 200,
+        data: {
+          username: formData.username,
+          password: formData.password,
         },
-      });
-
-      if (response.status === 200) {
-        dispatch(loginSuccess());
-        // Handle successful login, e.g., redirect
-      } else {
-        dispatch(loginFailure('Invalid username or password'));
-      }
+      };
+  
+      // Dispatching a successful login action with the simulated user data
+      dispatch(loginSuccess(fakeLoginResponse.data));
+      // Handle successful login, e.g., redirect
+  
     } catch (error) {
+      // Dispatching a failure action in case of an error
       dispatch(loginFailure('Error during login'));
     }
   };
