@@ -4,16 +4,14 @@ export {};
 
 interface AuthState {
   loggedIn: boolean;
-  // Add other properties as needed
 }
 
 const initialState: AuthState = {
   loggedIn: false,
-  // Initialize other properties if needed
 };
 
 const authReducer = (state: AuthState = initialState, action: { type: string }) => {
-  // Handle different actions and update the state accordingly
+  // Updating state accordingly
   switch (action.type) {
     case 'LOGIN':
       // Update state for login action
